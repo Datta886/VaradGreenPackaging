@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
        const images = [
-    "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag7.jpg",
+    "C:\Users\Admin\Downloads\varadweb\bag7.jpg",
     "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag2.jpg",
     "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag3.jpg",
     "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag4.jpg",
