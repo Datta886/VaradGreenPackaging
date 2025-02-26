@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Varad Packaging Industries</title>
+  <!-- Example Google Font (Montserrat) -->
+   <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    body {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 20px;
+      margin-top: 2px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2%;
+      font-weight: 600;
+    }
+    .top-bar-left, .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .top-bar-left span, .top-bar-right span {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      color: #333;
+      padding: 1rem 2%;
+      
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #2a7c2a;
+      gap: 25rem;
+      margin-bottom: 0.5%;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-weight: 600;
+      color: #333;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: #2a7c2a;
+
+    }
+    .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  20px 80px;
+    background-color: #3d9683; 
+    position: relative;
+    text-align: center;
+    height: 450px;/* Adjust background color */
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    color: white;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    max-width: 50%;
+     
+    
+     
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    text-align: center;
+     
+}
+
+.btn-enquire {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #3f8b3f;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+}
+#quote-description {
+    font-size: 1.2rem; /* Description size */
+    color: #f1f1f1; /* Light color for contrast */
+    margin-top: 10px;
+    max-width: 75%;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;  /* Centers text */
+    width: 100%; /* Makes sure it takes the full width */
+    display: flex;
+    justify-content: center; /* Ensures it's in the center */
+    padding-left: 120px;
+}
+
+ .slider-image {
+    width: 100%;  /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image scales properly */
+}
+
+#quote, #quote-description, #slider-image {
+    transition: opacity 0.5s ease-in-out;
+}
+.hero-images {
+    height: 100%;  /* Adjusts the height to fill the container */
+      /* Set a maximum height if needed */
+     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 100px;
+      /* Maintain aspect ratio */
+}
+img {
+    width: 400px;  /* Adjust width as needed */
+    height: 350px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image fills the space */
+}
+
+
+
+    /* Product Gallery */
+    .product-gallery {
+      background-color: #fff;
+      padding: 3rem 2%;
+      text-align: center;
+    }
+    .product-gallery h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #2a7c2a;
+      font-weight: 700;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .product-item {
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      padding: 1rem;
+      width: 200px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .product-item:hover {
+      transform: translateY(-2px);
+    }
+    .product-item img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 0.8rem;
+    }
+    .product-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* Why Choose Us */
+    .why-choose-us {
+      padding: 3rem 2%;
+      text-align: center;
+    }
+    .why-choose-us h2 {
+      font-size: 2rem;
+      color: #2a7c2a;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    .why-choose-us .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .feature-box {
+      background-color: #fff;
+      width: 200px;
+      padding: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .feature-box:hover {
+      transform: translateY(-2px);
+    }
+    .feature-box i {
+      font-size: 2rem;
+      color: #2a7c2a;
+      margin-bottom: 0.5rem;
+    }
+    .feature-box h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-weight: 600;
+    }
+    .feature-box p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Styling the navigation */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;     
+    position: relative;
+    z-index: 1000; /* Higher than green background */
+}
+
+
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none;
+    min-width: 180px;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+    /* Environment Section */
+    .environment-section {
+      background-color: #f9f9f9;
+      padding: 3rem 2%;
+      text-align: center;
+      position: relative;
+    }
+    .environment-section .env-text {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: rgba(255,255,255,0.8);
+      padding: 1.5rem;
+      border-radius: 6px;
+    }
+    .environment-section .env-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2a7c2a;
+      font-weight: 700;
+    }
+    .environment-section .env-text p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .environment-bg {
+      background: url("images/environment-bg.jpg") center/cover no-repeat;
+      opacity: 0.3;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+    }
+
+    /* Our Clients */
+    .clients-section {
+      background-color: #fff;
+      padding: 3rem 2%;
+      text-align: center;
+    }
+    .clients-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #2a7c2a;
+      font-weight: 700;
+    }
+    .client-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .client-logos img {
+      width: 100px;
+      height: auto;
+      filter: grayscale(50%);
+      transition: filter 0.3s;
+    }
+    .client-logos img:hover {
+      filter: grayscale(0%);
+    }
+    #quote, #quote-description, #slider-image {
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+    /* Testimonials */
+    .testimonials {
+      padding: 3rem 2%;
+      text-align: center;
+    }
+    .testimonials h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #2a7c2a;
+      font-weight: 700;
+    }
+    .testimonial-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .testimonial-card {
+      background-color: #f9f9f9;
+      border-radius: 6px;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: left;
+      position: relative;
+    }
+    .testimonial-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #333;
+      font-weight: 600;
+    }
+    .testimonial-card p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: #fff;
+      padding: 3rem 2%;
+    }
+    .contact-section h2 {
+      font-size: 1.8rem;
+      color: #2a7c2a;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .contact-info .info-box {
+      flex: 1 1 300px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-form form {
+      display: grid;
+      gap: 1rem;
+    }
+    .contact-form input, 
+    .contact-form select,
+    .contact-form textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      width: 100%;
+      outline: none;
+    }
+    .contact-form button {
+      background-color: #2a7c2a;
+      color: #fff;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #276427;
+    }
+
+    /* Map Section (Optional) */
+    .map-section {
+      padding: 2rem 2%;
+    }
+    .map-section iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2a7c2a;
+      color: #fff;
+      padding: 2rem 2%;
+      text-align: center;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .footer-box {
+      flex: 1 1 200px;
+      text-align: left;
+    }
+    .footer-box h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .footer-box ul {
+      list-style: none;
+    }
+    .footer-box li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      display: inline-block;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    #quote {
+    font-size: 2.5rem;  /* Keep font size */
+    font-weight: bold;
+    text-align: center;  /* Align properly */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+    .social-icons a:hover {
+      color: #000;
+    }
+    .footer-bottom {
+      font-size: 0.8rem;
+      border-top: 1px solid #fff;
+      padding-top: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-image {
+        position: static;
+        margin: 2rem auto 0;
+        display: block;
+      }
+      .product-item {
+        width: 45%;
+      }
+      .feature-box, .testimonial-card {
+        width: 90%;
+        margin: 0 auto;
+      }
+      .contact-info {
+        flex-direction: column;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-box {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .product-item {
+        width: 80%;
+      }
+    }
+  </style>
+   
+</head>
+<body>
+  <script type="module">
+    // Import Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
+
+     
+
+    
+  </script>
+
+    <script src="script.js"></script>
+</body>
+
+  <!-- Header Top Bar -->
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <span><i class="fa fa-envelope"></i> varadpackagingindustries@gmail.com</span>
+        <span><i class="fa fa-phone"></i>+919011501267</span>
+      </div>
+      <div class="top-bar-right">
+        <span><i class="fa fa-map-marker"></i>Chh.Sambhaji Nagar,Maharashtra</span>
+        <!-- Add more icons if needed -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Varad Packaging Industries  <i class="fas fa-shopping-bag"></i></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li class="dropdown">
+          <a href="#products">Our Products ▾</a>
+          <ul class="dropdown-menu">
+              <li><a href="#paper-bags">Paper Bags</a></li>
+              <li><a href="#cloth-bags">Cloth Bags</a></li>
+              <li><a href="#sweet-bags">Sweet Bags</a></li>
+              <li><a href="#gift-bags">Gift Bags</a></li>
+              <li><a href="#shopping-bags">Shopping Bags</a></li>
+          </ul>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+  </ul>
+  </nav>
+   
+
+
+  <!-- Hero Section -->
+    
+  <section class="hero" id="home">
+    
+    <div class="hero-content">
+        <h1 id="quote">Eco-Friendly Paper Products for a Greener Future!</h1>
+        <p id="quote-description">From food bags to pizza boxes, our sustainable paper products help you make a positive impact on the planet.</p>
+        <a href="#contact" class="btn-enquire">Enquire Now</a>
+    </div>
+    <div class="hero-images">
+      <img id="slider-image" src="bag1.jpg" alt="Cloth Bag">
+  </div>
+     
+</section>
+
+
+  <!-- Product Gallery -->
+  <section class="product-gallery" id="products">
+    <h2>Product Gallery</h2>
+    <p>We have a rich range of products which includes Paper Pouch / V- bottom, Multi-Colour Paper Bags, Shopping Bags, Sweet & Snacks Bags, Cake Bags, etc.</p>
+    <div class="products">
+      <!-- Example product items -->
+      <div class="product-item">
+        <img src="C:\Users\Admin\Downloads\varadweb\bag3.jpg" alt="Shopping Bag">
+        <h3>Shopping Bag</h3>
+      </div>
+      <div class="product-item">
+        <img src="C:\Users\Admin\Downloads\varadweb\bag4.jpg" alt="Paper Pouch">
+        <h3>Paper Pouch / Bottom</h3>
+      </div>
+      <div class="product-item">
+        <img src="C:\Users\Admin\Downloads\varadweb\bag5.jpg" alt="Sweet Bag">
+        <h3>Sweet Bag</h3>
+      </div>
+      <div class="product-item">
+        <img src="C:\Users\Admin\Downloads\varadweb\bag2.jpg" alt="Paper Boxes">
+        <h3>Paper Boxes</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
+    <h2>Why Choose Us</h2>
+    <div class="features">
+      <div class="feature-box">
+        <i class="fa-regular fa-face-smile"></i>
+        <h3>Customer delight</h3>
+        <p>We prioritize customer satisfaction through quality service and products.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-check-circle fa-2x"></i>
+        <h3> Quality Products</h3>
+        <p>We ensure our paper products meet the highest standards of quality.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fa-regular fa-clock"></i>
+        <h3>On time delivery</h3>
+        <p>We deliver products promptly to help you keep your business on schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Environment Section -->
+  <section class="environment-section">
+    <div class="environment-bg"></div>
+    <div class="env-text">
+      <h3>Join Us in Protecting the Environment</h3>
+      <p>Every decision we make is a step toward a brighter, more sustainable future. By choosing our paper packaging, you are choosing to protect the planet for all of us and future generations.</p>
+    </div>
+  </section>
+
+   
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <h3>Rahul Sharma  </h3>
+        <p>
+          "The custom paper bag exceeded my expectations. The bag and design were impeccably crafted, reflecting my brand identity. Thank you!"
+        </p>
+      </div>
+      <div class="testimonial-card">
+        <h3>Ananya Verma</h3>
+        <p>
+          "Right from inquiry to after-sales production support, this team has been on point. The product quality is excellent, and delivery was on time!"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <h2>Contact & Know More</h2>
+    <div class="contact-info">
+      <div class="info-box">
+        <i class="fa fa-phone"></i>
+        <span>Mobile: +91 9011501267</span>
+      </div>
+      <div class="info-box">
+        <i class="fa fa-envelope"></i>
+        <span>Mail Us: varadpackagingindustries@gmail.com</span>
+      </div>
+      <div class="info-box">
+        <i class="fa fa-map-marker"></i>
+        <span>Address:Chh,Sambhajinagar,Maharashtra</span>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <select name="product" required>
+          <option value="">Select Product</option>
+          <option value="shopping-bag">Shopping Bag</option>
+          <option value="paper-pouch">Paper Pouch</option>
+          <option value="sweet-bag">Sweet Bag</option>
+          <option value="paper-boxes">Paper Boxes</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+        <!-- Alert Message -->
+<div class="alert" style="display:none;">Your message has been sent!</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Map Section (Optional) -->
+  <section class="map-section">
+    <!-- Example Google Map Embed -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1577.303562390683!2d75.57791692526759!3d19.1259512344143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb2ef98ab7189d%3A0x22b2f37aefda34b!2sSambhaji%20Nagar%2C%20Maharashtra%20431143!5e0!3m2!1sen!2sin!4v1740481951602!5m2!1sen!2sin"></iframe> 
+      
+     
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h4>Varad Packaging Indusreies</h4>
+        <p>We provide complete eco-friendly packaging solutions to help you reduce plastic use. Join us in saving the planet!</p>
+      </div>
+      <div class="footer-box">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Our Products</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">Cake Box</a></li>
+          <li><a href="#products">Sandy Zipper Pouch</a></li>
+          <!-- Add more as needed -->
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <!-- Example icons (font-awesome) -->
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Varad Packaging Solutions. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- FontAwesome (for icons) -->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+</body>
+</html>
