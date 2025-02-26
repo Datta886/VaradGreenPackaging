@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const images = [
-        "C:\Users\Admin\Downloads\varadweb\bag7.jpg",
-        "C:\Users\Admin\Downloads\varadweb\bag2.jpg",
-        "C:\Users\Admin\Downloads\varadweb\bag3.jpg",
-        "C:\Users\Admin\Downloads\varadweb\bag4.jpg",
-        "C:\Users\Admin\Downloads\varadweb\bag5.jpg"
+        "bag7.jpg",
+        "bag2.jpg",
+        "bag3.jpg",
+        "bag4.jpg",
+        "bag5.jpg"
     ];
 
     let index = 0;
