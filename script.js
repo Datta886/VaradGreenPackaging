@@ -26,12 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-    const images = [
-        "bag7.jpg",
-        "bag2.jpg",
-        "bag3.jpg",
-        "bag4.jpg",
-        "bag5.jpg"
+    
+       const images = [
+    "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag7.jpg",
+    "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag2.jpg",
+    "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag3.jpg",
+    "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag4.jpg",
+    "https://raw.githubusercontent.com/Datta886/VaradGreenPackaging/main/images/bag5.jpg"
+
+
     ];
 
     let index = 0;
